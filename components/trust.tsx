@@ -1,6 +1,7 @@
 "use client"
 
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Trust() {
   return (
@@ -17,12 +18,23 @@ export function Trust() {
                 gives us a clear NTE, and keeps vendors moving without us chasing updates.”
               </p>
             </div>
-            <div className="mt-4 flex flex-col gap-1 text-sm text-left md:mt-0 md:text-right">
-              <p className="font-semibold text-foreground">Alex Rivera</p>
-              <p className="text-muted-foreground">Founder, Placeholder Studio</p>
-              <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-emerald-600">
-                Projects scoped in {"<"}10 minutes on average
-              </p>
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-left md:mt-0 md:items-end md:text-right">
+              <Avatar className="size-12 shadow-sm ring-2 ring-emerald-500/70">
+                <AvatarImage
+                  src="https://images.unsplash.com/photo-1624395213043-fa2e123b2656?auto=format&fit=crop&w=256&h=256&q=80"
+                  alt="Portrait of Alex Rivera"
+                />
+                <AvatarFallback className="bg-gradient-to-tr from-emerald-500 to-sky-500 text-xs font-semibold uppercase text-white">
+                  AR
+                </AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col gap-1">
+                <p className="font-semibold text-foreground">Alex Rivera</p>
+                <p className="text-muted-foreground">Founder, Placeholder Studio</p>
+                <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-emerald-600">
+                  Projects scoped in {"<"}10 minutes on average
+                </p>
+              </div>
             </div>
           </div>
         </AnimateOnScroll>
