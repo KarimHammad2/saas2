@@ -29,13 +29,14 @@ export function Hero() {
         <div className="flex-1">
           <AnimateOnScroll>
             <h1 className="text-balance text-[2.75rem] font-bold leading-[1.08] tracking-tight text-foreground md:text-[3.5rem] lg:text-[4rem]">
-              Your AI-Native Project Manager, Powered by Email
+              Turn Email Requests Into Done Projects
             </h1>
           </AnimateOnScroll>
           <AnimateOnScroll delay={150}>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              Frank turns your emails into fully managed projects, with human
-              oversight when you need it. No dashboards. No learning curve. Just email.
+              Frank turns any email into a scoped plan with clear pricing and a not-to-exceed cap,
+              then manages the work for you. Fewer back-and-forth threads, predictable costs,
+              and projects that move from inbox to done in days, not weeks.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={300}>

@@ -38,7 +38,7 @@ const sections = [
   {
     title: "7. Contact",
     content:
-      "If you have questions about these Terms of Use, please contact us at legal@saas2.example.com or through our Contact page.",
+      "If you have questions about these Terms of Use, please contact us at legal@saassquared.com or through our Contact page.",
   },
 ]
 

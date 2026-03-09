@@ -31,7 +31,7 @@ const reachUs = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@saas2.example.com",
+    value: "hello@saassquared.com",
   },
   {
     icon: Clock,

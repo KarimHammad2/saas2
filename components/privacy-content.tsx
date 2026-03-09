@@ -33,12 +33,12 @@ const sections = [
   {
     title: "Your Rights",
     content:
-      "Depending on your location, you may have the right to access, correct, delete, or port your personal data, or to object to or restrict certain processing. You can update your account information in your account settings. To exercise other rights, contact us at privacy@saas2.example.com.",
+      "Depending on your location, you may have the right to access, correct, delete, or port your personal data, or to object to or restrict certain processing. You can update your account information in your account settings. To exercise other rights, contact us at privacy@saassquared.com.",
   },
   {
     title: "Contact",
     content:
-      "If you have questions about this Privacy Policy or our data practices, please contact us at privacy@saas2.example.com or through our Contact page.",
+      "If you have questions about this Privacy Policy or our data practices, please contact us at privacy@saassquared.com or through our Contact page.",
   },
   {
     title: "Changes",
