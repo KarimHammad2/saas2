@@ -24,9 +24,9 @@ export function Architecture() {
               SaaS{"\u00B2"} runs on a lightweight architecture designed for email-first workflows.
             </p>
             <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-muted-foreground">
-              <li>• Orchestration Layer — interprets requests, scopes projects, and manages execution</li>
-              <li>• Memory Layer — stores project state, approvals, and structured data</li>
-              <li>• Email Interface — everything happens directly in your inbox</li>
+            <li>• Orchestration Layer, interprets requests, scopes projects, and manages execution</li>
+            <li>• Memory Layer, stores project state, approvals, and structured data</li>
+            <li>• Email Interface, everything happens directly in your inbox</li>
             </ul>
           </AnimateOnScroll>
 

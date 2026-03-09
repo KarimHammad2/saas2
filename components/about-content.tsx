@@ -15,13 +15,13 @@ const values = [
     icon: Target,
     title: "Our mission",
     description:
-      "We believe project management should meet you where you already work — your inbox. SaaS² turns emails into fully managed projects with AI doing the scoping and coordination, so you get results without learning new tools or switching context.",
+      "We believe project management should meet you where you already work, your inbox. SaaS² turns emails into fully managed projects with AI doing the scoping and coordination, so you get results without learning new tools or switching context.",
   },
   {
     icon: Lightbulb,
     title: "Why we built this",
     description:
-      "Teams waste hours in dashboards, status updates, and tool overload. We built SaaS² to cut through the noise: send an email, get a plan, approve work, and receive deliverables — all without leaving your inbox.",
+      "Teams waste hours in dashboards, status updates, and tool overload. We built SaaS² to cut through the noise: send an email, get a plan, approve work, and receive deliverables, all without leaving your inbox.",
   },
   {
     icon: Heart,

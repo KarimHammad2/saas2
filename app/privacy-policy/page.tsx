@@ -4,7 +4,7 @@ import { PrivacyContent } from "@/components/privacy-content"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SaaS²",
-  description: "Privacy Policy for SaaS² — how we collect, use, and protect your information.",
+  description: "Privacy Policy for SaaS², how we collect, use, and protect your information.",
 }
 
 export default function PrivacyPolicyPage() {
