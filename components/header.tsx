@@ -55,12 +55,6 @@ export function Header() {
             FAQ
           </Link>
           <Link
-            href="#"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Login
-          </Link>
-          <Link
             href="#cta"
             className="inline-flex h-9 items-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
@@ -100,13 +94,6 @@ export function Header() {
               className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               FAQ
-            </Link>
-            <Link
-              href="#"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-            >
-              Login
             </Link>
             <Link
               href="#cta"
