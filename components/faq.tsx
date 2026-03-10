@@ -45,6 +45,10 @@ const faqs = [
     q: "How is my data and email content handled?",
     a: "We only use your email content to scope and run the projects you ask Frank to manage. Project data is stored securely, and you can request that we remove past project data that is no longer needed for active work.",
   },
+  {
+    q: "Does Frank see my AI conversations?",
+    a: "No. Your conversations with your AI remain private. Frank only processes the information you send via email.",
+  },
 ]
 
 export function FAQ() {
