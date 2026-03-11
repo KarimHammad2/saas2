@@ -23,6 +23,7 @@ const contactSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().min(3, "Subject must be at least 3 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  website: z.string().max(0).optional(),
 })
 
 type ContactFormValues = z.infer<typeof contactSchema>
@@ -48,14 +49,33 @@ export function ContactContent() {
       email: "",
       subject: "",
       message: "",
+      website: "",
     },
   })
 
-  function onSubmit(values: ContactFormValues) {
-    // Placeholder: in production you would call an API route or third-party service
-    console.log(values)
-    toast.success("Message sent! We'll get back to you within 24 hours.")
-    form.reset()
+  async function onSubmit(values: ContactFormValues) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      })
+
+      const data = await response.json().catch(() => null)
+
+      if (!response.ok || !data?.success) {
+        toast.error("Something went wrong. Please try again in a moment.")
+        return
+      }
+
+      toast.success("Message sent! We'll get back to you within 24 hours.")
+      form.reset()
+    } catch (error) {
+      console.error("Failed to submit contact form", error)
+      toast.error("Something went wrong. Please try again in a moment.")
+    }
   }
 
   return (
@@ -129,10 +149,24 @@ export function ContactContent() {
                   </FormItem>
                 )}
               />
+              {/* Honeypot field for bots */}
+              <FormField
+                control={form.control}
+                name="website"
+                render={({ field }) => (
+                  <FormItem className="hidden">
+                    <FormLabel>Website</FormLabel>
+                    <FormControl>
+                      <Input autoComplete="off" tabIndex={-1} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <Button
                 type="submit"
                 size="lg"
-                className="rounded-full px-8"
+                className="rounded-full px-8 cursor-pointer"
                 disabled={form.formState.isSubmitting}
               >
                 {form.formState.isSubmitting ? "Sending..." : "Send message"}
