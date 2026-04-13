@@ -42,7 +42,7 @@ export function Hero() {
           <AnimateOnScroll delay={300}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href="#cta"
+                href="#pricing"
                 className="inline-flex h-12 items-center rounded-full bg-primary px-8 text-[15px] font-semibold text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:bg-primary/90 hover:shadow-[0_4px_12px_rgba(58,123,255,0.3)]"
               >
                 Start Free

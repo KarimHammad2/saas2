@@ -55,7 +55,7 @@ export function Header() {
             FAQ
           </Link>
           <Link
-            href="#cta"
+            href="#pricing"
             className="inline-flex h-9 items-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Get Started
@@ -96,7 +96,7 @@ export function Header() {
               FAQ
             </Link>
             <Link
-              href="#cta"
+              href="#pricing"
               onClick={() => setMobileOpen(false)}
               className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >

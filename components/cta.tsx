@@ -4,6 +4,10 @@ import Link from "next/link"
 import { Mail, ShieldCheck, Zap } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
+const ctaMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Start Project")}&body=${encodeURIComponent(
+  "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+)}`
+
 const ctaBenefits = [
   { icon: ShieldCheck, label: "No credit card required" },
   { icon: Zap, label: "Results in minutes" },
@@ -29,13 +33,13 @@ export function CTA() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="#"
+                href={ctaMailtoHref}
                 className="inline-flex h-12 items-center rounded-full bg-primary px-8 text-[15px] font-semibold text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:bg-primary/90 hover:shadow-[0_4px_12px_rgba(58,123,255,0.3)]"
               >
                 Start Free
               </Link>
               <Link
-                href="#"
+                href="mailto:daniel@saassquared.cmo"
                 className="inline-flex h-12 items-center rounded-full border border-border bg-background px-8 text-[15px] font-semibold text-foreground transition-all duration-200 hover:bg-muted hover:shadow-sm"
               >
                 Contact Sales
