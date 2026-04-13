@@ -1,8 +1,11 @@
 "use client"
 
-import Link from "next/link"
 import { Check } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+
+const pricingMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Start Project")}&body=${encodeURIComponent(
+  "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+)}`
 
 const plans = [
   {
@@ -111,8 +114,8 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                <Link
-                  href="#cta"
+                <a
+                  href={pricingMailtoHref}
                   className={`mt-6 inline-flex h-10 items-center justify-center rounded-full text-sm font-semibold transition-all duration-200 ${
                     plan.featured
                       ? "bg-primary text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:bg-primary/90 hover:shadow-[0_4px_12px_rgba(58,123,255,0.3)]"
@@ -120,7 +123,7 @@ export function Pricing() {
                   }`}
                 >
                   {plan.cta}
-                </Link>
+                </a>
               </div>
             </AnimateOnScroll>
           ))}
