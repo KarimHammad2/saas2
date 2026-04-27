@@ -4,7 +4,8 @@ import { ContactContent } from "@/components/contact-content"
 
 export const metadata: Metadata = {
   title: "Contact | SaaS²",
-  description: "Get in touch with the SaaS² team. We typically respond within 24 hours.",
+  description:
+    "Contact SaaS² for agency onboarding, sales, or partnership questions. We typically respond within 24 hours.",
 }
 
 export default function ContactPage() {
@@ -23,7 +24,8 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-muted-foreground">
-            Have a question or want to learn more? Send us a message and we&apos;ll get back to you within 24 hours.
+            Agencies: questions about client workflows, team rollout, or enterprise sales? Message us, we
+            typically reply within 24 hours.
           </p>
         </div>
       </section>

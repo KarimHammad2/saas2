@@ -34,7 +34,7 @@ export function Footer() {
               />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              AI-native project management, powered entirely by email.
+              Scope, approve, and deliver client work from email, built for agencies and account teams.
             </p>
           </div>
 

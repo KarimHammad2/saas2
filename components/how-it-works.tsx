@@ -7,23 +7,23 @@ const steps = [
   {
     icon: Mail,
     step: "01",
-    title: "Email Frank",
+    title: "Email Frank the client brief",
     description:
-      "Send any task or project via email. Frank automatically scopes the work, estimates effort, and generates a plan.",
+      "Forward a request or start a new thread, Frank scopes the client work, estimates effort, and returns a plan your team can share internally or with the client when needed.",
   },
   {
     icon: CheckCircle,
     step: "02",
-    title: "Approve the Plan",
+    title: "Approve the plan and NTE",
     description:
-      "Frank replies with pricing, timeline, and an NTE cap. You approve directly in email, no logins required.",
+      "Frank replies with pricing, timeline, and a not-to-exceed cap. Leads and PMs approve in email, no new logins for the account team.",
   },
   {
     icon: Zap,
     step: "03",
-    title: "Work Gets Done",
+    title: "Delivery stays in the thread",
     description:
-      "Frank manages the entire project lifecycle. Updates and deliverables arrive in your inbox.",
+      "Frank runs coordination across the lifecycle, status and deliverables land in the same account inbox your team already uses.",
   },
 ]
 
@@ -36,7 +36,7 @@ export function HowItWorks() {
             How SaaS{"\u00B2"} Works
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Three steps. No onboarding. No dashboard. Just email.
+            Client brief in email, approval with an NTE cap, delivery orchestrated in-thread, no agency-wide rollout of another tool.
           </p>
         </AnimateOnScroll>
 

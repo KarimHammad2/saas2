@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/page-layout"
 import { Hero } from "@/components/hero"
+import { TheProblem } from "@/components/the-problem"
 import { Trust } from "@/components/trust"
 import { HowItWorks } from "@/components/how-it-works"
 import { Architecture } from "@/components/architecture"
@@ -13,6 +14,7 @@ export default function Page() {
   return (
     <PageLayout>
       <Hero />
+      <TheProblem />
       <Trust />
       <HowItWorks />
       <Architecture />

@@ -9,9 +9,9 @@ const ctaMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Star
 )}`
 
 const ctaBenefits = [
-  { icon: ShieldCheck, label: "No credit card required" },
-  { icon: Zap, label: "Results in minutes" },
-  { icon: Mail, label: "Works directly from your inbox" },
+  { icon: ShieldCheck, label: "No credit card to try" },
+  { icon: Zap, label: "Client-ready scopes in minutes" },
+  { icon: Mail, label: "Stays in your account inbox" },
 ]
 
 export function CTA() {
@@ -26,10 +26,11 @@ export function CTA() {
             }}
           >
             <h2 className="text-balance text-[2rem] font-semibold tracking-tight text-foreground md:text-[2.25rem] lg:text-[2.75rem]">
-              Ready to Get Started?
+              Put the next client brief through Frank
             </h2>
             <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Send your first project to Frank and see results in minutes, not days.
+              Email a real retainer or account request and see a scoped plan with an NTE in minutes, your team keeps
+              approval, no new stack for the shop.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link

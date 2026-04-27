@@ -4,11 +4,11 @@ import { ArrowRight, Database, FileOutput, Layers, Mail, Truck } from "lucide-re
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 const layers = [
-  { icon: Mail, label: "User Email", sublabel: "Your inbox" },
+  { icon: Mail, label: "Agency inboxes", sublabel: "Account & team email" },
   { icon: Layers, label: "saas2.app", sublabel: "Orchestration Layer", isCore: true },
   { icon: Database, label: "saas2.io", sublabel: "Memory Layer" },
   { icon: FileOutput, label: "Structured Project State", sublabel: "Plans, tasks, approvals" },
-  { icon: Truck, label: "Delivery", sublabel: "Deliverables to your inbox" },
+  { icon: Truck, label: "Delivery", sublabel: "Client deliverables in-thread" },
 ]
 
 export function Architecture() {
@@ -21,12 +21,12 @@ export function Architecture() {
               Email-Native Architecture
             </h2>
             <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-              SaaS{"\u00B2"} runs on a lightweight architecture designed for email-first workflows.
+              Built for high-volume client work, SaaS{"\u00B2"} keeps orchestration and memory light while your account teams stay in email.
             </p>
             <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-muted-foreground">
-            <li>• Orchestration Layer, interprets requests, scopes projects, and manages execution</li>
-            <li>• Memory Layer, stores project state, approvals, and structured data</li>
-            <li>• Email Interface, everything happens directly in your inbox</li>
+            <li>• Orchestration Layer, interprets briefs, scopes work per client, and drives execution</li>
+            <li>• Memory Layer, holds project state, approvals, and structured data by account</li>
+            <li>• Email Interface, PMs and account leads work where they already live, the inbox</li>
             </ul>
           </AnimateOnScroll>
 

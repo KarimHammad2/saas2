@@ -13,17 +13,17 @@ import {
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 const aiFeatures = [
-  { icon: Sparkles, title: "AI-generated project scoping", description: "Frank analyzes your email and generates a complete project plan with tasks, timeline, and budget." },
-  { icon: FileText, title: "Automatic summaries", description: "Get concise status updates and project summaries delivered directly to your inbox." },
-  { icon: Users, title: "Vendor coordination", description: "Frank manages communication with vendors and contractors on your behalf." },
-  { icon: Mail, title: "Email-based updates", description: "Every milestone, change, and deliverable comes through your existing email." },
+  { icon: Sparkles, title: "AI-generated project scoping", description: "Frank reads the client email and returns a project plan with tasks, timeline, and budget your team can align to the account." },
+  { icon: FileText, title: "Automatic summaries", description: "Per-client status and recap land in the inbox, so account and delivery stay aligned without a status meeting." },
+  { icon: Users, title: "Vendor and bench coordination", description: "Frank runs follow-ups with your contractors, partners, and freelance bench so your PMs are not the bottleneck." },
+  { icon: Mail, title: "Email-based updates", description: "Milestones, change notes, and client-ready deliverables stay in the threads your accounts already use." },
 ]
 
 const controlFeatures = [
-  { icon: ShieldCheck, title: "Approval workflow (NTE caps)", description: "Nothing proceeds without your explicit approval. Every project has a not-to-exceed cap." },
-  { icon: DollarSign, title: "Transparent pricing", description: "See exactly what you will pay before approving any work. No surprises." },
-  { icon: Eye, title: "Human oversight", description: "Stay in full control. Frank handles the work, you make the decisions." },
-  { icon: Scale, title: "Warranty and dispute handling", description: "Built-in protections for quality assurance and fair dispute resolution." },
+  { icon: ShieldCheck, title: "Approval workflow (NTE caps)", description: "Nothing moves without your lead's sign-off, every client body of work gets a not-to-exceed cap up front." },
+  { icon: DollarSign, title: "Transparent pricing", description: "See agency cost before you commit the team or the SOW, fewer surprise write-downs for the client." },
+  { icon: Eye, title: "Human oversight", description: "Principals, PMs, and account directors stay in the loop, Frank accelerates the busywork, not the org chart." },
+  { icon: Scale, title: "Warranty and dispute handling", description: "Governance and QA hooks so client expectation and delivery stay matched when things get tight." },
 ]
 
 export function Features() {
@@ -32,10 +32,10 @@ export function Features() {
       <div className="mx-auto max-w-[1200px] px-6">
         <AnimateOnScroll>
           <h2 className="text-[2rem] font-semibold tracking-tight text-foreground md:text-[2.25rem]">
-            Everything You Need to Run Projects
+            Everything you need to run client work
           </h2>
           <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted-foreground">
-            From scoping to delivery, Frank handles the details so you can focus on what matters.
+            From scoping a brief to handoff, Frank handles the operational load so your team can focus on accounts, creative, and outcomes.
           </p>
         </AnimateOnScroll>
 

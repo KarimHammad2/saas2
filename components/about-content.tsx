@@ -5,9 +5,9 @@ import { Target, Lightbulb, Heart, Mail } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 
 const stats = [
-  { value: "Email-first", label: "No dashboards, no apps" },
-  { value: "AI-native", label: "Frank handles the heavy lifting" },
-  { value: "Human oversight", label: "You stay in control" },
+  { value: "Email-first", label: "Account teams stay in the inbox" },
+  { value: "AI-native", label: "Scoping and coordination at scale" },
+  { value: "Human oversight", label: "Your leads approve scope and NTE" },
 ]
 
 const values = [
@@ -15,19 +15,19 @@ const values = [
     icon: Target,
     title: "Our mission",
     description:
-      "We believe project management should meet you where you already work, your inbox. SaaS² turns emails into fully managed projects with AI doing the scoping and coordination, so you get results without learning new tools or switching context.",
+      "We believe client and retainer work should be run where your accounts team already defends the relationship, the inbox. SaaS² turns that email into managed delivery with AI handling scoping and follow-through, so your shop ships without another firm-wide app rollout.",
   },
   {
     icon: Lightbulb,
     title: "Why we built this",
     description:
-      "Teams waste hours in dashboards, status updates, and tool overload. We built SaaS² to cut through the noise: send an email, get a plan, approve work, and receive deliverables, all without leaving your inbox.",
+      "Agencies drown in status tools while clients still email their AMs. We built SaaS² so a brief in email becomes a plan with an NTE, approvals happen in thread, and deliverables return the same way, with fewer handoffs and less tool fatigue.",
   },
   {
     icon: Heart,
     title: "What we value",
     description:
-      "Simplicity over feature bloat. Email as the universal interface. AI that assists instead of replacing human judgment. And a product that works the way you already think about work.",
+      "Clarity of scope and commercial control for client work. Email as the honest interface between your team and the client. AI that supports PMs and account leads instead of sidelining them. A product that respects how service businesses actually make money.",
   },
 ]
 
@@ -50,7 +50,8 @@ export function AboutContent() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={150}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              AI-native project management, powered entirely by email. No dashboards. No learning curve. Just email.
+              We help client-service teams scope, approve, and deliver from email, with an AI layer for coordination and
+              a human in the loop for every NTE, no new dashboard for the whole agency.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={300}>
@@ -97,10 +98,10 @@ export function AboutContent() {
         <div className="mx-auto max-w-[1200px] px-6 text-center">
           <AnimateOnScroll>
             <h2 className="text-2xl font-semibold text-foreground">
-              Ready to try it?
+              Ready to run a real client through Frank?
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Send your first project to Frank and see results in minutes.
+              Talk to us about rollouts, the Agency plan, or sending your next brief. We respond fast.
             </p>
             <Link
               href="/contact"

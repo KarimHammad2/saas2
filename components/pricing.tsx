@@ -2,30 +2,28 @@
 
 import { Check } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { BOOKING_HREF } from "@/lib/booking"
 
 const pricingMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Start Project")}&body=${encodeURIComponent(
   "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
 )}`
 
-const bookingHref =
-  "https://outlook.office.com/bookwithme/user/2ed369580db44a66aa1d9162c54c578c@saassquared.com/meetingtype/iiZCZU0N5EKNF4fcfsP5Fw2?anonymous&ep=mlink"
-
 const plans = [
   {
-    name: "Solopreneur",
+    name: "Solo / Independent",
     price: "5%",
     priceSuffix: "platform fee",
-    description: "Ideal for freelancers and creators.",
+    description: "For individual practitioners, not a full account team yet.",
     features: [
       "Frank manages your projects",
       "Pay only when work is approved",
       "Transparent 5% fee on work",
       "$1,000 project \u2192 $50 fee, $10,000 \u2192 $500",
-      "Designed for solo operators who want fewer email threads and predictable costs",
+      "A lighter path for solo leads who still want fewer threads and predictable costs",
       "Priority email support",
     ],
     cta: "Book a Call",
-    ctaHref: bookingHref,
+    ctaHref: BOOKING_HREF,
     featured: false,
   },
   {
@@ -35,10 +33,10 @@ const plans = [
     description: "Get started with Frank at no cost.",
     features: [
       "Unlimited use of Frank",
-      "Email-native project management",
+      "Run client and internal requests from your inbox",
       "Fair-use limits apply",
       "No credit card required",
-      "Best for trying Frank on small, low-risk requests",
+      "Try Frank on a live account or pilot before you standardize the stack",
     ],
     cta: "Email Frank",
     ctaHref: pricingMailtoHref,
@@ -48,16 +46,16 @@ const plans = [
     name: "Agency",
     price: "2.5%",
     priceSuffix: "platform fee",
-    description: "For teams and studios at scale.",
+    description: "For shops running many client accounts, retainers, and parallel delivery.",
     features: [
-      "Add multiple users",
-      "Assign your own PMs",
-      "Lower platform fee",
-      "Best when you manage many client projects each month",
-      "Dedicated account support",
+      "Multiple team members and client contexts",
+      "Assign your own PMs to accounts",
+      "Lower platform fee at volume",
+      "Built for high throughput across accounts each month",
+      "Dedicated support for rollouts and governance",
     ],
     cta: "Book Agency Onboarding",
-    ctaHref: bookingHref,
+    ctaHref: BOOKING_HREF,
     featured: false,
   },
 ]
@@ -72,7 +70,8 @@ export function Pricing() {
               Simple, Transparent Pricing
             </h2>
             <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Only pay when you approve work. No subscriptions. No hidden fees.
+              SaaS{"\u00B2"} is built for client-service agencies, you only pay a platform fee when you approve
+              completed work, no flat subscription for the shop.
             </p>
           </div>
         </AnimateOnScroll>
@@ -162,6 +161,12 @@ export function Pricing() {
             </AnimateOnScroll>
           ))}
         </div>
+        <AnimateOnScroll>
+          <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
+            The Agency tier matches how we design the product, Solo and Always Free are here so individuals and
+            pilots can get value without a firm-wide decision first.
+          </p>
+        </AnimateOnScroll>
       </div>
     </section>
   )

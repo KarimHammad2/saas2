@@ -7,8 +7,9 @@ import './globals.css'
 const _inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SaaS\u00B2, Your AI-Native Project Manager, Powered by Email',
-  description: 'Frank turns your emails into fully managed projects, with human oversight when you need it. No dashboards. No learning curve. Just email.',
+  title: 'SaaS\u00B2, Email-First PM for Client Work & Retainers | Agencies',
+  description:
+    'Scope client and retainer work from the inbox, set NTE caps, and orchestrate deliverables, without a new app. Frank is built for agencies and account teams. Email-native.',
   generator: 'v0.app',
   icons: {
     icon: '/images/logo.png',

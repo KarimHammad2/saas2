@@ -14,32 +14,32 @@ const benefits = [
   {
     icon: Inbox,
     title: "Works from any inbox",
-    description: "Gmail, Outlook, Apple Mail, no new tools to learn.",
+    description: "Gmail, Outlook, Apple Mail, your AEs and PMs keep their flow.",
   },
   {
     icon: Zap,
-    title: "Zero onboarding",
-    description: "Send an email, get a project plan. That's it.",
+    title: "Zero rollout for the agency",
+    description: "Send a client brief, get a scoped plan, no firm-wide app training.",
   },
   {
     icon: ShieldCheck,
     title: "AI with human oversight",
-    description: "Frank handles the work, you stay in control of approvals.",
+    description: "Frank coordinates, your team keeps sign-off on scope, NTE, and change orders.",
   },
   {
     icon: DollarSign,
-    title: "Transparent pricing",
-    description: "Every project comes with a clear NTE cap before you approve.",
+    title: "Client-facing predictability",
+    description: "Every body of work ships with a clear NTE before your team or the client approves spend.",
   },
   {
     icon: Sparkles,
     title: "Pay only when you approve",
-    description: "No upfront costs. No subscriptions. No surprises.",
+    description: "No platform subscription for the shop, you align fees with approved client work.",
   },
   {
     icon: Users,
-    title: "Built for everyone",
-    description: "Solopreneurs, agencies, and teams of every size.",
+    title: "Built for account-led work",
+    description: "Retainers, multiple stakeholders, and parallel client threads, with room for your own PMs and vendors.",
   },
 ]
 
@@ -52,7 +52,7 @@ export function WhyEmail() {
             No Dashboards. No Learning Curve. Just Email.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Everything happens in your inbox. SaaS{"\u00B2"} is designed around the tool you already use every day.
+            Everything happens in the inboxes your accounts team already defends, SaaS{"\u00B2"} is built for that reality.
           </p>
         </AnimateOnScroll>
 

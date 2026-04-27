@@ -4,7 +4,8 @@ import { AboutContent } from "@/components/about-content"
 
 export const metadata: Metadata = {
   title: "About | SaaS²",
-  description: "Learn about SaaS², AI-native project management, powered entirely by email.",
+  description:
+    "How SaaS² helps agencies run client and retainer work from email, with scoping, approvals, and human oversight.",
 }
 
 export default function AboutPage() {
