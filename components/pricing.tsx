@@ -7,22 +7,10 @@ const pricingMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("
   "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
 )}`
 
+const bookingHref =
+  "https://outlook.office.com/bookwithme/user/2ed369580db44a66aa1d9162c54c578c@saassquared.com/meetingtype/iiZCZU0N5EKNF4fcfsP5Fw2?anonymous&ep=mlink"
+
 const plans = [
-  {
-    name: "Always Free",
-    price: "$0",
-    priceSuffix: null,
-    description: "Get started with Frank at no cost.",
-    features: [
-      "Unlimited use of Frank",
-      "Email-native project management",
-      "Fair-use limits apply",
-      "No credit card required",
-      "Best for trying Frank on small, low-risk requests",
-    ],
-    cta: "Start Free",
-    featured: false,
-  },
   {
     name: "Solopreneur",
     price: "5%",
@@ -36,7 +24,24 @@ const plans = [
       "Designed for solo operators who want fewer email threads and predictable costs",
       "Priority email support",
     ],
-    cta: "Get Started",
+    cta: "Book a Call",
+    ctaHref: bookingHref,
+    featured: false,
+  },
+  {
+    name: "Always Free",
+    price: "$0",
+    priceSuffix: null,
+    description: "Get started with Frank at no cost.",
+    features: [
+      "Unlimited use of Frank",
+      "Email-native project management",
+      "Fair-use limits apply",
+      "No credit card required",
+      "Best for trying Frank on small, low-risk requests",
+    ],
+    cta: "Email Frank",
+    ctaHref: pricingMailtoHref,
     featured: true,
   },
   {
@@ -51,7 +56,8 @@ const plans = [
       "Best when you manage many client projects each month",
       "Dedicated account support",
     ],
-    cta: "Join as an Agency",
+    cta: "Book Agency Onboarding",
+    ctaHref: bookingHref,
     featured: false,
   },
 ]
@@ -71,43 +77,68 @@ export function Pricing() {
           </div>
         </AnimateOnScroll>
 
-        <div className="mx-auto mt-16 grid max-w-4xl items-end gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-6 px-1 md:grid-cols-3 md:items-start md:gap-6 md:pb-4 md:pt-8 lg:gap-8 lg:pt-10">
           {plans.map((plan, i) => (
             <AnimateOnScroll key={plan.name} delay={i * 120}>
               <div
-                className={`relative flex h-full flex-col rounded-2xl border p-8 transition-all duration-300 ${
+                className={`relative flex w-full flex-col rounded-2xl border transition-all duration-300 ${
                   plan.featured
-                    ? "border-primary/20 bg-muted shadow-[0_8px_30px_rgba(0,0,0,0.06)] md:-mt-4 md:pb-10"
-                    : "border-border/60 bg-background shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+                    ? "z-20 border-primary/25 bg-linear-to-b from-primary/[0.07] to-muted p-8 shadow-[0_16px_48px_rgba(58,123,255,0.18),0_6px_20px_rgba(0,0,0,0.07)] ring-1 ring-primary/15 md:-mt-7 md:min-h-144 md:origin-top md:scale-[1.09] md:p-10 md:py-12 lg:-mt-8 lg:min-h-152"
+                    : "border-border/60 bg-background p-8 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
                 }`}
               >
                 {plan.featured && (
-                  <div className="absolute -top-3 left-8 rounded-full border border-primary/20 bg-secondary px-3 py-0.5 text-xs font-medium text-foreground">
+                  <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-0.5 text-xs font-semibold text-primary shadow-sm">
                     Popular
                   </div>
                 )}
 
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-[2.5rem] font-bold leading-none tracking-tight text-foreground">
+                  <span
+                    className={`font-bold leading-none tracking-tight text-foreground ${
+                      plan.featured
+                        ? "text-[2.75rem] md:text-[3.35rem]"
+                        : "text-[2.35rem] md:text-[2.5rem]"
+                    }`}
+                  >
                     {plan.price}
                   </span>
                   {plan.priceSuffix && (
-                    <span className="text-sm text-muted-foreground">
+                    <span
+                      className={`text-muted-foreground ${plan.featured ? "text-sm md:text-base" : "text-sm"}`}
+                    >
                       {plan.priceSuffix}
                     </span>
                   )}
                 </div>
 
-                <h3 className="mt-3 text-base font-semibold text-foreground">{plan.name}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                <h3
+                  className={`mt-3 font-semibold text-foreground ${
+                    plan.featured ? "text-lg md:text-xl" : "text-base"
+                  }`}
+                >
+                  {plan.name}
+                </h3>
+                <p
+                  className={`mt-1 leading-relaxed text-muted-foreground ${
+                    plan.featured ? "text-sm md:text-[15px]" : "text-sm"
+                  }`}
+                >
                   {plan.description}
                 </p>
 
-                <ul className="mt-6 flex flex-1 flex-col gap-3">
+                <ul className={`mt-6 flex flex-1 flex-col ${plan.featured ? "gap-3.5" : "gap-3"}`}>
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 size-4 shrink-0 text-foreground" strokeWidth={2} />
-                      <span className="text-sm leading-relaxed text-muted-foreground">
+                      <Check
+                        className={`mt-0.5 shrink-0 text-foreground ${plan.featured ? "size-4 md:size-4.5" : "size-4"}`}
+                        strokeWidth={2}
+                      />
+                      <span
+                        className={`leading-relaxed text-muted-foreground ${
+                          plan.featured ? "text-sm md:text-[15px]" : "text-sm"
+                        }`}
+                      >
                         {feature}
                       </span>
                     </li>
@@ -115,11 +146,14 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href={pricingMailtoHref}
-                  className={`mt-6 inline-flex h-10 items-center justify-center rounded-full text-sm font-semibold transition-all duration-200 ${
+                  href={plan.ctaHref}
+                  {...(plan.ctaHref.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className={`mt-8 inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200 ${
                     plan.featured
-                      ? "bg-primary text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:bg-primary/90 hover:shadow-[0_4px_12px_rgba(58,123,255,0.3)]"
-                      : "border border-border text-foreground hover:border-foreground/20 hover:bg-muted"
+                      ? "h-11 px-6 text-[15px] md:h-12 md:text-base bg-primary text-primary-foreground shadow-[0_2px_8px_rgba(58,123,255,0.35)] hover:bg-primary/90 hover:shadow-[0_6px_20px_rgba(58,123,255,0.4)]"
+                      : "mt-6 h-10 text-sm border border-border text-foreground hover:border-foreground/20 hover:bg-muted"
                   }`}
                 >
                   {plan.cta}
