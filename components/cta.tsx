@@ -3,10 +3,16 @@
 import Link from "next/link"
 import { Mail, ShieldCheck, Zap } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
+import { openMailtoWithFallback } from "@/lib/mailto-fallback"
 
-const ctaMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Start Project")}&body=${encodeURIComponent(
-  "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+const startProjectSubject = "Start Project"
+const startProjectBody = "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+const ctaMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent(startProjectSubject)}&body=${encodeURIComponent(
+  startProjectBody
 )}`
+const salesMailtoHref = "mailto:daniel@saassquared.com"
+const salesSubject = "Sales Inquiry"
+const salesBody = "Hi Daniel,\n\nI'd like to discuss sales options.\n"
 
 const ctaBenefits = [
   { icon: ShieldCheck, label: "No credit card to try" },
@@ -35,12 +41,30 @@ export function CTA() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href={ctaMailtoHref}
+                onClick={(event) => {
+                  event.preventDefault()
+                  openMailtoWithFallback({
+                    mailtoHref: ctaMailtoHref,
+                    email: "Frank@saas2.app",
+                    subject: startProjectSubject,
+                    body: startProjectBody,
+                  })
+                }}
                 className="inline-flex h-12 items-center rounded-full bg-primary px-8 text-[15px] font-semibold text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:bg-primary/90 hover:shadow-[0_4px_12px_rgba(58,123,255,0.3)]"
               >
                 Start Free
               </Link>
               <Link
-                href="mailto:daniel@saassquared.cmo"
+                href={salesMailtoHref}
+                onClick={(event) => {
+                  event.preventDefault()
+                  openMailtoWithFallback({
+                    mailtoHref: salesMailtoHref,
+                    email: "daniel@saassquared.com",
+                    subject: salesSubject,
+                    body: salesBody,
+                  })
+                }}
                 className="inline-flex h-12 items-center rounded-full border border-border bg-background px-8 text-[15px] font-semibold text-foreground transition-all duration-200 hover:bg-muted hover:shadow-sm"
               >
                 Contact Sales

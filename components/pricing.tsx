@@ -3,9 +3,12 @@
 import { Check } from "lucide-react"
 import { AnimateOnScroll } from "@/components/animate-on-scroll"
 import { BOOKING_HREF } from "@/lib/booking"
+import { openMailtoWithFallback } from "@/lib/mailto-fallback"
 
-const pricingMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent("Start Project")}&body=${encodeURIComponent(
-  "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+const pricingMailtoSubject = "Start Project"
+const pricingMailtoBody = "Hi Frank,\n\nI'd like to start a project.\n\nHere's what I'm working on:\n"
+const pricingMailtoHref = `mailto:Frank@saas2.app?subject=${encodeURIComponent(pricingMailtoSubject)}&body=${encodeURIComponent(
+  pricingMailtoBody
 )}`
 
 const plans = [
@@ -146,6 +149,19 @@ export function Pricing() {
 
                 <a
                   href={plan.ctaHref}
+                  onClick={(event) => {
+                    if (plan.ctaHref !== pricingMailtoHref) {
+                      return
+                    }
+
+                    event.preventDefault()
+                    openMailtoWithFallback({
+                      mailtoHref: pricingMailtoHref,
+                      email: "Frank@saas2.app",
+                      subject: pricingMailtoSubject,
+                      body: pricingMailtoBody,
+                    })
+                  }}
                   {...(plan.ctaHref.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
