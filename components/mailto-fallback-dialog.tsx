@@ -16,11 +16,11 @@ import {
 function GmailLogo() {
   return (
     <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2.5" fill="#FFFFFF" />
-      <path d="M4 8.2 12 14l8-5.8" fill="none" stroke="#EA4335" strokeWidth="2.2" strokeLinecap="round" />
-      <path d="M4 8.2V18h3.2V12L12 15.5 16.8 12v6H20V8.2" fill="none" stroke="#34A853" strokeWidth="2.1" />
-      <path d="M4 18V8.2l3.2 2.4V18Z" fill="#4285F4" />
-      <path d="M20 18V8.2l-3.2 2.4V18Z" fill="#FBBC05" />
+      <rect x="2" y="4" width="20" height="16" rx="3" fill="#FFFFFF" stroke="#E5E7EB" strokeWidth="1" />
+      <path d="M4.2 8.4 12 13.9l7.8-5.5" fill="none" stroke="#EA4335" strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M4.2 18V8.4l3.8 2.8V18Z" fill="#4285F4" />
+      <path d="M19.8 18V8.4L16 11.2V18Z" fill="#FBBC05" />
+      <path d="M8 18v-6.8l4 2.9 4-2.9V18Z" fill="#34A853" />
     </svg>
   )
 }
@@ -28,10 +28,11 @@ function GmailLogo() {
 function OutlookLogo() {
   return (
     <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
-      <rect x="2" y="5" width="9" height="14" rx="1.8" fill="#0A5FD7" />
-      <rect x="9.5" y="4" width="12.5" height="16" rx="2" fill="#1976EA" />
-      <path d="M10 8.2 16 12l6-3.8" fill="none" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="6.5" cy="12" r="2.1" fill="none" stroke="#FFFFFF" strokeWidth="1.6" />
+      <rect x="9.5" y="4" width="12.5" height="16" rx="2.2" fill="#0A66E8" />
+      <path d="m10.7 8.2 5.1 3.6 5.1-3.6V18h-10.2Z" fill="#1F8BFF" />
+      <path d="m10.7 8.2 5.1 3.6 5.1-3.6" fill="none" stroke="#FFFFFF" strokeWidth="1.35" strokeLinecap="round" />
+      <rect x="2" y="5.2" width="9.8" height="13.6" rx="2" fill="#0059D6" />
+      <circle cx="6.9" cy="12" r="2.5" fill="none" stroke="#FFFFFF" strokeWidth="1.6" />
     </svg>
   )
 }
