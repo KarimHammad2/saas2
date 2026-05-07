@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from '@/components/ui/sonner'
+import { MailtoFallbackDialog } from '@/components/mailto-fallback-dialog'
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Toaster />
+        <MailtoFallbackDialog />
         <Analytics />
       </body>
     </html>

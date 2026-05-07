@@ -1,7 +1,5 @@
 "use client"
 
-import { toast } from "sonner"
-
 type MailtoFallbackOptions = {
   mailtoHref: string
   email: string
@@ -9,10 +7,45 @@ type MailtoFallbackOptions = {
   body?: string
 }
 
-const buildGmailComposeUrl = (email: string, subject = "", body = "") =>
+export type MailtoFallbackPayload = {
+  email: string
+  subject: string
+  body: string
+}
+
+type MailtoFallbackListener = (payload: MailtoFallbackPayload | null) => void
+
+let currentMailtoFallbackPayload: MailtoFallbackPayload | null = null
+const mailtoFallbackListeners = new Set<MailtoFallbackListener>()
+
+function emitMailtoFallback(payload: MailtoFallbackPayload | null) {
+  currentMailtoFallbackPayload = payload
+  for (const listener of mailtoFallbackListeners) {
+    listener(payload)
+  }
+}
+
+export function subscribeToMailtoFallback(listener: MailtoFallbackListener) {
+  mailtoFallbackListeners.add(listener)
+  listener(currentMailtoFallbackPayload)
+
+  return () => {
+    mailtoFallbackListeners.delete(listener)
+  }
+}
+
+export function showMailtoFallback(payload: MailtoFallbackPayload) {
+  emitMailtoFallback(payload)
+}
+
+export function hideMailtoFallback() {
+  emitMailtoFallback(null)
+}
+
+export const buildGmailComposeUrl = (email: string, subject = "", body = "") =>
   `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
-const buildOutlookComposeUrl = (email: string, subject = "", body = "") =>
+export const buildOutlookComposeUrl = (email: string, subject = "", body = "") =>
   `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 
 export function openMailtoWithFallback({ mailtoHref, email, subject = "", body = "" }: MailtoFallbackOptions) {
@@ -40,34 +73,10 @@ export function openMailtoWithFallback({ mailtoHref, email, subject = "", body =
       return
     }
 
-    toast.message("Couldn't open a mail app automatically.", {
-      description: "Use one of these fallback options.",
-      action: {
-        label: "Copy email",
-        onClick: async () => {
-          try {
-            await navigator.clipboard.writeText(email)
-            toast.success("Email address copied.")
-          } catch {
-            toast.error("Could not copy email address.")
-          }
-        },
-      },
-    })
-
-    toast.message("Open in webmail instead", {
-      action: {
-        label: "Gmail",
-        onClick: () => {
-          window.open(buildGmailComposeUrl(email, subject, body), "_blank", "noopener,noreferrer")
-        },
-      },
-      cancel: {
-        label: "Outlook",
-        onClick: () => {
-          window.open(buildOutlookComposeUrl(email, subject, body), "_blank", "noopener,noreferrer")
-        },
-      },
+    showMailtoFallback({
+      email,
+      subject,
+      body,
     })
   }, 1200)
 }
